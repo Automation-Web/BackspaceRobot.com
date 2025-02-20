@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-02-01T22:25:27.836271" rpa="false" schemaversion="5">
+<suite id="s1" name="robotFramework" source="E:\MyWork\robotFramework">
+<suite id="s1-s1" name="Test" source="E:\MyWork\robotFramework\Test">
+<suite id="s1-s1-s1" name="Login" source="E:\MyWork\robotFramework\Test\Login.robot">
+<test id="s1-s1-s1-t1" name="Validate user is able to login to application" line="8">
+<kw name="Launch browser" owner="Reusable_Functions">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-01T22:25:28.232847" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.in/'.</msg>
+<arg>${URL}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<arg>options=add_argument("--proxy-server=http://your-proxy:port")</arg>
+<arg>options=add_argument("user-agent=${USER_AGENT}")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-01T22:25:28.231968" elapsed="8.182044"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-01T22:25:36.414726" elapsed="0.195339"/>
+</kw>
+<status status="PASS" start="2025-02-01T22:25:28.230908" elapsed="8.379434"/>
+</kw>
+<kw name="validate user is on home page" owner="Reusable_Functions">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[@aria-label='Amazon.in']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-01T22:25:36.613115" elapsed="0.193940"/>
+</kw>
+<status status="PASS" start="2025-02-01T22:25:36.611528" elapsed="0.195867"/>
+</kw>
+<kw name="user searches for &quot;Apple watches&quot;" owner="Reusable_Functions">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-01T22:25:36.809913" level="INFO">Typing text 'Apple watches' into text field '//input[@role='searchbox']'.</msg>
+<arg>//input[@role='searchbox']</arg>
+<arg>Apple watches</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-01T22:25:36.809341" elapsed="0.817595"/>
+</kw>
+<status status="PASS" start="2025-02-01T22:25:36.808416" elapsed="0.818981"/>
+</kw>
+<status status="PASS" start="2025-02-01T22:25:28.229563" elapsed="9.398730"/>
+</test>
+<status status="PASS" start="2025-02-01T22:25:27.908405" elapsed="9.721847"/>
+</suite>
+<status status="PASS" start="2025-02-01T22:25:27.904301" elapsed="9.728806"/>
+</suite>
+<status status="PASS" start="2025-02-01T22:25:27.839172" elapsed="9.796245"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="robotFramework">robotFramework</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">robotFramework.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Login">robotFramework.Test.Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-02-01T22:25:28.223481" level="ERROR">Error in file 'E:\MyWork\robotFramework\ToDoSteps\Reusable_Functions.robot' on line 4: Error in file 'E:\MyWork\robotFramework\Test\Login.robot' on line 7: Resource file with 'Test Cases' section is invalid.</msg>
+</errors>
+</robot>

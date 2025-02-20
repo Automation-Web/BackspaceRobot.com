@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2024-11-23T14:58:20.196811" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="E:\MyWork\robotFramework\Test\Login.robot">
+<test id="s1-t1" name="Validate user is able to login to application" line="8">
+<kw name="Launch browser" owner="Reusable_Functions">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-23T14:58:20.472042" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2024-11-23T15:03:23.262175" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-11-23T15:03:23.262671" level="FAIL">TimeoutException: Message: timeout: Timed out receiving message from renderer: 297.918
+  (Session info: chrome=131.0.6778.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ACDF6CB5+28821]
+	(No symbol) [0x00007FF7ACD63840]
+	(No symbol) [0x00007FF7ACC0578A]
+	(No symbol) [0x00007FF7ACBF3992]
+	(No symbol) [0x00007FF7ACBF365A]
+	(No symbol) [0x00007FF7ACBF1274]
+	(No symbol) [0x00007FF7ACBF1D1F]
+	(No symbol) [0x00007FF7ACC0084E]
+	(No symbol) [0x00007FF7ACC1492D]
+	(No symbol) [0x00007FF7ACC1B10A]
+	(No symbol) [0x00007FF7ACBF2484]
+	(No symbol) [0x00007FF7ACC14753]
+	(No symbol) [0x00007FF7ACC9F75A]
+	(No symbol) [0x00007FF7ACC7F0A3]
+	(No symbol) [0x00007FF7ACC4A778]
+	(No symbol) [0x00007FF7ACC4B8E1]
+	GetHandleVerifier [0x00007FF7AD12FCAD+3408013]
+	GetHandleVerifier [0x00007FF7AD14741F+3504127]
+	GetHandleVerifier [0x00007FF7AD13B5FD+3455453]
+	GetHandleVerifier [0x00007FF7ACEBBDBB+835995]
+	(No symbol) [0x00007FF7ACD6EB5F]
+	(No symbol) [0x00007FF7ACD6A814]
+	(No symbol) [0x00007FF7ACD6A9AD]
+	(No symbol) [0x00007FF7ACD5A199]
+	BaseThreadInitThunk [0x00007FFE4B56257D+29]
+	RtlUserThreadStart [0x00007FFE4C22AF28+40]
+</msg>
+<arg>${URL}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-11-23T14:58:20.471728" elapsed="302.803276">TimeoutException: Message: timeout: Timed out receiving message from renderer: 297.918
+  (Session info: chrome=131.0.6778.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ACDF6CB5+28821]
+	(No symbol) [0x00007FF7ACD63840]
+	(No symbol) [0x00007FF7ACC0578A]
+	(No symbol) [0x00007FF7ACBF3992]
+	(No symbol) [0x00007FF7ACBF365A]
+	(No symbol) [0x00007FF7ACBF1274]
+	(No symbol) [0x00007FF7ACBF1D1F]
+	(No symbol) [0x00007FF7ACC0084E]
+	(No symbol) [0x00007FF7ACC1492D]
+	(No symbol) [0x00007FF7ACC1B10A]
+	(No symbol) [0x00007FF7ACBF2484]
+	(No symbol) [0x00007FF7ACC14753]
+	(No symbol) [0x00007FF7ACC9F75A]
+	(No symbol) [0x00007FF7ACC7F0A3]
+	(No symbol) [0x00007FF7ACC4A778]
+	(No symbol) [0x00007FF7ACC4B8E1]
+	GetHandleVerifier [0x00007FF7AD12FCAD+3408013]
+	GetHandleVerifier [0x00007FF7AD14741F+3504127]
+	GetHandleVerifier [0x00007FF7AD13B5FD+3455453]
+	GetHandleVerifier [0x00007FF7ACEBBDBB+835995]
+	(No symbol) [0x00007FF7ACD6EB5F]
+	(No symbol) [0x00007FF7ACD6A814]
+	(No symbol) [0x00007FF7ACD6A9AD]
+	(No symbol) [0x00007FF7ACD5A199]
+	BaseThreadInitThunk [0x00007FFE4B56257D+29]
+	RtlUserThreadStart [0x00007FFE4C22AF28+40]
+</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2024-11-23T15:03:23.275280" elapsed="0.000034"/>
+</kw>
+<status status="FAIL" start="2024-11-23T14:58:20.470678" elapsed="302.804782">TimeoutException: Message: timeout: Timed out receiving message from renderer: 297.918
+  (Session info: chrome=131.0.6778.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ACDF6CB5+28821]
+	(No symbol) [0x00007FF7ACD63840]
+	(No symbol) [0x00007FF7ACC0578A]
+	(No symbol) [0x00007FF7ACBF3992]
+	(No symbol) [0x00007FF7ACBF365A]
+	(No symbol) [0x00007FF7ACBF1274]
+	(No symbol) [0x00007FF7ACBF1D1F]
+	(No symbol) [0x00007FF7ACC0084E]
+	(No symbol) [0x00007FF7ACC1492D]
+	(No symbol) [0x00007FF7ACC1B10A]
+	(No symbol) [0x00007FF7ACBF2484]
+	(No symbol) [0x00007FF7ACC14753]
+	(No symbol) [0x00007FF7ACC9F75A]
+	(No symbol) [0x00007FF7ACC7F0A3]
+	(No symbol) [0x00007FF7ACC4A778]
+	(No symbol) [0x00007FF7ACC4B8E1]
+	GetHandleVerifier [0x00007FF7AD12FCAD+3408013]
+	GetHandleVerifier [0x00007FF7AD14741F+3504127]
+	GetHandleVerifier [0x00007FF7AD13B5FD+3455453]
+	GetHandleVerifier [0x00007FF7ACEBBDBB+835995]
+	(No symbol) [0x00007FF7ACD6EB5F]
+	(No symbol) [0x00007FF7ACD6A814]
+	(No symbol) [0x00007FF7ACD6A9AD]
+	(No symbol) [0x00007FF7ACD5A199]
+	BaseThreadInitThunk [0x00007FFE4B56257D+29]
+	RtlUserThreadStart [0x00007FFE4C22AF28+40]
+</status>
+</kw>
+<kw name="validate user is on home page" owner="Reusable_Functions">
+<status status="NOT RUN" start="2024-11-23T15:03:23.275882" elapsed="0.000034"/>
+</kw>
+<kw name="user enters &quot;username&quot; and &quot;password&quot;" owner="Reusable_Functions">
+<status status="NOT RUN" start="2024-11-23T15:03:23.276195" elapsed="0.000031"/>
+</kw>
+<kw name="user click on login button" owner="Reusable_Functions">
+<status status="NOT RUN" start="2024-11-23T15:03:23.276497" elapsed="0.000030"/>
+</kw>
+<kw name="user closer the browser" owner="Reusable_Functions">
+<status status="NOT RUN" start="2024-11-23T15:03:23.276785" elapsed="0.000030"/>
+</kw>
+<status status="FAIL" start="2024-11-23T14:58:20.469977" elapsed="302.807145">TimeoutException: Message: timeout: Timed out receiving message from renderer: 297.918
+  (Session info: chrome=131.0.6778.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ACDF6CB5+28821]
+	(No symbol) [0x00007FF7ACD63840]
+	(No symbol) [0x00007FF7ACC0578A]
+	(No symbol) [0x00007FF7ACBF3992]
+	(No symbol) [0x00007FF7ACBF365A]
+	(No symbol) [0x00007FF7ACBF1274]
+	(No symbol) [0x00007FF7ACBF1D1F]
+	(No symbol) [0x00007FF7ACC0084E]
+	(No symbol) [0x00007FF7ACC1492D]
+	(No symbol) [0x00007FF7ACC1B10A]
+	(No symbol) [0x00007FF7ACBF2484]
+	(No symbol) [0x00007FF7ACC14753]
+	(No symbol) [0x00007FF7ACC9F75A]
+	(No symbol) [0x00007FF7ACC7F0A3]
+	(No symbol) [0x00007FF7ACC4A778]
+	(No symbol) [0x00007FF7ACC4B8E1]
+	GetHandleVerifier [0x00007FF7AD12FCAD+3408013]
+	GetHandleVerifier [0x00007FF7AD14741F+3504127]
+	GetHandleVerifier [0x00007FF7AD13B5FD+3455453]
+	GetHandleVerifier [0x00007FF7ACEBBDBB+835995]
+	(No symbol) [0x00007FF7ACD6EB5F]
+	(No symbol) [0x00007FF7ACD6A814]
+	(No symbol) [0x00007FF7ACD6A9AD]
+	(No symbol) [0x00007FF7ACD5A199]
+	BaseThreadInitThunk [0x00007FFE4B56257D+29]
+	RtlUserThreadStart [0x00007FFE4C22AF28+40]
+</status>
+</test>
+<status status="FAIL" start="2024-11-23T14:58:20.199490" elapsed="303.079194"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-11-23T14:58:20.466725" level="ERROR">Error in file 'E:\MyWork\robotFramework\ToDoSteps\Reusable_Functions.robot' on line 4: Error in file 'E:\MyWork\robotFramework\Test\Login.robot' on line 7: Resource file with 'Test Cases' section is invalid.</msg>
+</errors>
+</robot>
