@@ -1,0 +1,36 @@
+name: Robot Framework CI/CD
+
+on:
+  push:
+    branches:
+      - automation_robot
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Robot Framework Tests
+        run: |
+          robot --outputdir results Login.test
+
+      - name: Upload Test Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: results/
