@@ -1,53 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-08-24T00:08:13.917971" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-08-24T00:50:04.765795" rpa="false" schemaversion="5">
 <suite id="s1" name="UploadWorkflow" source="E:\MyWork\robotFramework\Test\UploadWorkflow.robot">
 <test id="s1-t1" name="Run Upload Workflow Once" line="23">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary" type="SETUP">
 <arg>0.4</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2025-08-24T00:08:14.450361" elapsed="0.000227"/>
+<status status="PASS" start="2025-08-24T00:50:05.284106" elapsed="0.000208"/>
 </kw>
 <kw name="Launch browser" owner="Reusable_Functions">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🛠️🚀 Launching Selenium Session... Let's automate! 🤖✨</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-24T00:08:14.451186" elapsed="0.000357"/>
+<status status="PASS" start="2025-08-24T00:50:05.285109" elapsed="0.000408"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-24T00:08:14.452057" level="INFO">Opening browser 'Chrome' to base url 'https://practice.expandtesting.com/upload'.</msg>
+<msg time="2025-08-24T00:50:05.286031" level="INFO">Opening browser 'HeadlessChrome' to base url 'https://practice.expandtesting.com/upload'.</msg>
 <arg>${URL}</arg>
+<arg>${Headless}</arg>
 <arg>${browser}</arg>
-<arg>options=add_experimental_option("detach", True)</arg>
-<arg>options=add_argument("--proxy-server=http://your-proxy:port")</arg>
-<arg>options=add_argument("user-agent=${USER_AGENT}")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-24T00:08:14.451782" elapsed="6.845806"/>
+<status status="PASS" start="2025-08-24T00:50:05.285733" elapsed="6.197839"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-24T00:08:21.298357" elapsed="0.429233"/>
+<status status="PASS" start="2025-08-24T00:50:11.483882" elapsed="0.421366"/>
 </kw>
-<status status="PASS" start="2025-08-24T00:08:14.450963" elapsed="7.277012"/>
+<status status="PASS" start="2025-08-24T00:50:05.284860" elapsed="6.620777"/>
 </kw>
 <kw name="validate user is on home page" owner="Reusable_Functions">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>//a[@aria-label='SUT']</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-24T00:08:21.729655" elapsed="0.836986"/>
+<status status="PASS" start="2025-08-24T00:50:11.907541" elapsed="0.845735"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-08-24T00:08:22.977658" level="INFO">Page title is 'Files Upload page for Automation Testing Practice'.</msg>
+<msg time="2025-08-24T00:50:13.158627" level="INFO">Page title is 'Files Upload page for Automation Testing Practice'.</msg>
 <arg>Files Upload page for Automation Testing Practice</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-08-24T00:08:22.566907" elapsed="0.411033"/>
+<status status="PASS" start="2025-08-24T00:50:12.753502" elapsed="0.405434"/>
 </kw>
-<status status="PASS" start="2025-08-24T00:08:21.728893" elapsed="1.249342"/>
+<status status="PASS" start="2025-08-24T00:50:11.906738" elapsed="1.252476"/>
 </kw>
 <kw name="Get Excel Files From Resource and upload" owner="Reusable_Functions">
 <kw name="List Files In Directory" owner="OperatingSystem">
-<msg time="2025-08-24T00:08:22.980613" level="INFO" html="true">Listing contents of directory '&lt;a href="file://E:\MyWork\robotFramework\Test\Resource"&gt;E:\MyWork\robotFramework\Test\Resource&lt;/a&gt;'.</msg>
-<msg time="2025-08-24T00:08:22.982015" level="INFO">13 files:
-TestData_File_2_part2.xlsx
+<msg time="2025-08-24T00:50:13.161429" level="INFO" html="true">Listing contents of directory '&lt;a href="file://E:\MyWork\robotFramework\Test\Resource"&gt;E:\MyWork\robotFramework\Test\Resource&lt;/a&gt;'.</msg>
+<msg time="2025-08-24T00:50:13.162575" level="INFO">12 files:
 TestData_File_3_part1.xlsx
 TestData_File_3_part2.xlsx
 TestData_File_4_part1.xlsx
@@ -60,162 +57,296 @@ TestData_File_5_part3.xlsx
 TestData_File_5_part4.xlsx
 TestData_File_5_part5.xlsx
 TestData_File_5_part6.xlsx</msg>
-<msg time="2025-08-24T00:08:22.982421" level="INFO">@{files} = [ TestData_File_2_part2.xlsx | TestData_File_3_part1.xlsx | TestData_File_3_part2.xlsx | TestData_File_4_part1.xlsx | TestData_File_4_part2.xlsx | TestData_File_4_part3.xlsx | TestData_File_4_part4.xl...</msg>
+<msg time="2025-08-24T00:50:13.162978" level="INFO">@{files} = [ TestData_File_3_part1.xlsx | TestData_File_3_part2.xlsx | TestData_File_4_part1.xlsx | TestData_File_4_part2.xlsx | TestData_File_4_part3.xlsx | TestData_File_4_part4.xlsx | TestData_File_5_part1.xl...</msg>
 <var>@{files}</var>
 <arg>${RESOURCE_DIR}</arg>
 <arg>*.xlsx</arg>
 <doc>Wrapper for `List Directory` that returns only files.</doc>
-<status status="PASS" start="2025-08-24T00:08:22.980026" elapsed="0.002478"/>
+<status status="PASS" start="2025-08-24T00:50:13.160894" elapsed="0.002173"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-08-24T00:08:22.983296" level="INFO">['TestData_File_2_part2.xlsx', 'TestData_File_3_part1.xlsx', 'TestData_File_3_part2.xlsx', 'TestData_File_4_part1.xlsx', 'TestData_File_4_part2.xlsx', 'TestData_File_4_part3.xlsx', 'TestData_File_4_part4.xlsx', 'TestData_File_5_part1.xlsx', 'TestData_File_5_part2.xlsx', 'TestData_File_5_part3.xlsx', 'TestData_File_5_part4.xlsx', 'TestData_File_5_part5.xlsx', 'TestData_File_5_part6.xlsx']</msg>
+<msg time="2025-08-24T00:50:13.163862" level="INFO">['TestData_File_3_part1.xlsx', 'TestData_File_3_part2.xlsx', 'TestData_File_4_part1.xlsx', 'TestData_File_4_part2.xlsx', 'TestData_File_4_part3.xlsx', 'TestData_File_4_part4.xlsx', 'TestData_File_5_part1.xlsx', 'TestData_File_5_part2.xlsx', 'TestData_File_5_part3.xlsx', 'TestData_File_5_part4.xlsx', 'TestData_File_5_part5.xlsx', 'TestData_File_5_part6.xlsx']</msg>
 <arg>${files}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-08-24T00:08:22.982893" elapsed="0.000532"/>
+<status status="PASS" start="2025-08-24T00:50:13.163467" elapsed="0.000518"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Normalize Path" owner="OperatingSystem">
-<msg time="2025-08-24T00:08:22.984905" level="INFO">${file_path} = Resource\TestData_File_2_part2.xlsx</msg>
+<msg time="2025-08-24T00:50:13.165210" level="INFO">${file_path} = Resource\TestData_File_3_part1.xlsx</msg>
 <var>${file_path}</var>
 <arg>${RESOURCE_DIR}/${file}</arg>
 <doc>Normalizes the given path.</doc>
-<status status="PASS" start="2025-08-24T00:08:22.984398" elapsed="0.000578"/>
+<status status="PASS" start="2025-08-24T00:50:13.164814" elapsed="0.000450"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-08-24T00:08:22.985715" level="INFO">${abs_path} = E:\MyWork\robotFramework\Test\Resource\TestData_File_2_part2.xlsx</msg>
+<msg time="2025-08-24T00:50:13.165857" level="INFO">${abs_path} = E:\MyWork\robotFramework\Test\Resource\TestData_File_3_part1.xlsx</msg>
 <var>${abs_path}</var>
 <arg>E:\\MyWork\\robotFramework\\Test\\${file_path}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-08-24T00:08:22.985288" elapsed="0.000495"/>
+<status status="PASS" start="2025-08-24T00:50:13.165513" elapsed="0.000405"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-08-24T00:08:22.986401" level="INFO">Resource\TestData_File_2_part2.xlsx</msg>
+<msg time="2025-08-24T00:50:13.166400" level="INFO">Resource\TestData_File_3_part1.xlsx</msg>
 <arg>${file_path}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-08-24T00:08:22.986076" elapsed="0.000443"/>
+<status status="PASS" start="2025-08-24T00:50:13.166156" elapsed="0.000330"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-08-24T00:08:22.987124" level="INFO">Uploading: E:\MyWork\robotFramework\Test\Resource\TestData_File_2_part2.xlsx</msg>
+<msg time="2025-08-24T00:50:13.166798" level="INFO">Uploading: E:\MyWork\robotFramework\Test\Resource\TestData_File_3_part1.xlsx</msg>
 <arg>Uploading: ${abs_path}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-08-24T00:08:22.986811" elapsed="0.000424"/>
+<status status="PASS" start="2025-08-24T00:50:13.166660" elapsed="0.000188"/>
 </kw>
 <kw name="Upload Excel File" owner="Reusable_Functions">
 <kw name="Choose File" owner="SeleniumLibrary">
-<msg time="2025-08-24T00:08:22.988720" level="INFO">Sending E:\MyWork\robotFramework\Test\Resource\TestData_File_2_part2.xlsx to browser.</msg>
+<msg time="2025-08-24T00:50:13.167574" level="INFO">Sending E:\MyWork\robotFramework\Test\Resource\TestData_File_3_part1.xlsx to browser.</msg>
 <arg>//input[@type='file']</arg>
 <arg>${file}</arg>
 <doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<status status="PASS" start="2025-08-24T00:08:22.988247" elapsed="0.879711"/>
+<status status="PASS" start="2025-08-24T00:50:13.167343" elapsed="0.860835"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>//button[contains(text(),'Upload')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-24T00:08:23.868570" elapsed="0.842380"/>
+<status status="PASS" start="2025-08-24T00:50:14.028895" elapsed="0.841703"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-24T00:08:24.712423" level="INFO">Clicking element '//button[contains(text(),'Upload')]'.</msg>
+<msg time="2025-08-24T00:50:14.871549" level="INFO">Clicking element '//button[contains(text(),'Upload')]'.</msg>
+<msg time="2025-08-24T00:50:16.847052" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-41.png"&gt;&lt;img src="selenium-screenshot-41.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-24T00:50:16.847541" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (171, 1013)
+  (Session info: chrome=139.0.7258.128)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff739b678d5+2802741]
+	GetHandleVerifier [0x0x7ff7398ceb70+79568]
+	(No symbol) [0x0x7ff73966c0fa]
+	(No symbol) [0x0x7ff7396caaa9]
+	(No symbol) [0x0x7ff7396c8442]
+	(No symbol) [0x0x7ff7396c5481]
+	(No symbol) [0x0x7ff7396c4371]
+	(No symbol) [0x0x7ff7396b5bb8]
+	(No symbol) [0x0x7ff7396eac8a]
+	(No symbol) [0x0x7ff7396b5466]
+	(No symbol) [0x0x7ff7396eaea0]
+	(No symbol) [0x0x7ff739712e24]
+	(No symbol) [0x0x7ff7396eaa63]
+	(No symbol) [0x0x7ff7396b3c91]
+	(No symbol) [0x0x7ff7396b4a23]
+	GetHandleVerifier [0x0x7ff739b92ced+2979917]
+	GetHandleVerifier [0x0x7ff739b8d0f3+2956371]
+	GetHandleVerifier [0x0x7ff739baacbd+3078173]
+	GetHandleVerifier [0x0x7ff7398e836e+184014]
+	GetHandleVerifier [0x0x7ff7398f024f+216495]
+	GetHandleVerifier [0x0x7ff7398d70c4+113700]
+	GetHandleVerifier [0x0x7ff7398d7279+114137]
+	GetHandleVerifier [0x0x7ff7398bdf78+10968]
+	BaseThreadInitThunk [0x0x7ffbd632e8d7+23]
+	RtlUserThreadStart [0x0x7ffbd7e3c34c+44]
+</msg>
 <arg>//button[contains(text(),'Upload')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-24T00:08:24.711778" elapsed="4.496584"/>
+<status status="FAIL" start="2025-08-24T00:50:14.871106" elapsed="1.983964">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (171, 1013)
+  (Session info: chrome=139.0.7258.128)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff739b678d5+2802741]
+	GetHandleVerifier [0x0x7ff7398ceb70+79568]
+	(No symbol) [0x0x7ff73966c0fa]
+	(No symbol) [0x0x7ff7396caaa9]
+	(No symbol) [0x0x7ff7396c8442]
+	(No symbol) [0x0x7ff7396c5481]
+	(No symbol) [0x0x7ff7396c4371]
+	(No symbol) [0x0x7ff7396b5bb8]
+	(No symbol) [0x0x7ff7396eac8a]
+	(No symbol) [0x0x7ff7396b5466]
+	(No symbol) [0x0x7ff7396eaea0]
+	(No symbol) [0x0x7ff739712e24]
+	(No symbol) [0x0x7ff7396eaa63]
+	(No symbol) [0x0x7ff7396b3c91]
+	(No symbol) [0x0x7ff7396b4a23]
+	GetHandleVerifier [0x0x7ff739b92ced+2979917]
+	GetHandleVerifier [0x0x7ff739b8d0f3+2956371]
+	GetHandleVerifier [0x0x7ff739baacbd+3078173]
+	GetHandleVerifier [0x0x7ff7398e836e+184014]
+	GetHandleVerifier [0x0x7ff7398f024f+216495]
+	GetHandleVerifier [0x0x7ff7398d70c4+113700]
+	GetHandleVerifier [0x0x7ff7398d7279+114137]
+	GetHandleVerifier [0x0x7ff7398bdf78+10968]
+	BaseThreadInitThunk [0x0x7ffbd632e8d7+23]
+	RtlUserThreadStart [0x0x7ffbd7e3c34c+44]
+</status>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>//h1[text()='File Uploaded!']</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-24T00:08:29.208663" elapsed="0.878625"/>
-</kw>
-<kw name="Remove File" owner="OperatingSystem">
-<msg time="2025-08-24T00:08:30.088365" level="INFO" html="true">Removed file '&lt;a href="file://E:\MyWork\robotFramework\Test\Resource\TestData_File_2_part2.xlsx"&gt;E:\MyWork\robotFramework\Test\Resource\TestData_File_2_part2.xlsx&lt;/a&gt;'.</msg>
-<arg>${file}</arg>
-<doc>Removes a file with the given path.</doc>
-<status status="PASS" start="2025-08-24T00:08:30.087538" elapsed="0.001035"/>
-</kw>
-<arg>${abs_path}</arg>
-<status status="PASS" start="2025-08-24T00:08:22.987597" elapsed="7.101085"/>
-</kw>
-<var name="${file}">TestData_File_2_part2.xlsx</var>
-<status status="PASS" start="2025-08-24T00:08:22.984103" elapsed="7.104625"/>
-</iter>
-<iter>
-<kw name="Normalize Path" owner="OperatingSystem">
-<msg time="2025-08-24T00:08:30.089824" level="INFO">${file_path} = Resource\TestData_File_3_part1.xlsx</msg>
-<var>${file_path}</var>
-<arg>${RESOURCE_DIR}/${file}</arg>
-<doc>Normalizes the given path.</doc>
-<status status="PASS" start="2025-08-24T00:08:30.089047" elapsed="0.000894"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-08-24T00:08:30.090848" level="INFO">${abs_path} = E:\MyWork\robotFramework\Test\Resource\TestData_File_3_part1.xlsx</msg>
-<var>${abs_path}</var>
-<arg>E:\\MyWork\\robotFramework\\Test\\${file_path}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-08-24T00:08:30.090506" elapsed="0.000388"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-08-24T00:08:30.091282" level="INFO">Resource\TestData_File_3_part1.xlsx</msg>
-<arg>${file_path}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-08-24T00:08:30.091085" elapsed="0.000261"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-08-24T00:08:30.091685" level="INFO">Uploading: E:\MyWork\robotFramework\Test\Resource\TestData_File_3_part1.xlsx</msg>
-<arg>Uploading: ${abs_path}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-08-24T00:08:30.091506" elapsed="0.000238"/>
-</kw>
-<kw name="Upload Excel File" owner="Reusable_Functions">
-<kw name="Choose File" owner="SeleniumLibrary">
-<msg time="2025-08-24T00:08:30.092868" level="INFO">Sending E:\MyWork\robotFramework\Test\Resource\TestData_File_3_part1.xlsx to browser.</msg>
-<msg time="2025-08-24T00:08:31.119990" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-38.png"&gt;&lt;img src="selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-08-24T00:08:31.120185" level="FAIL">Element with locator '//input[@type='file']' not found.</msg>
-<arg>//input[@type='file']</arg>
-<arg>${file}</arg>
-<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<status status="FAIL" start="2025-08-24T00:08:30.092359" elapsed="1.032600">Element with locator '//input[@type='file']' not found.</status>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>//button[contains(text(),'Upload')]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-08-24T00:08:31.125307" elapsed="0.000046"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>//button[contains(text(),'Upload')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-24T00:08:31.125470" elapsed="0.000024"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>//h1[text()='File Uploaded!']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-08-24T00:08:31.125580" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-08-24T00:50:16.855490" elapsed="0.000051"/>
 </kw>
 <kw name="Remove File" owner="OperatingSystem">
 <arg>${file}</arg>
 <doc>Removes a file with the given path.</doc>
-<status status="NOT RUN" start="2025-08-24T00:08:31.125682" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-08-24T00:50:16.855682" elapsed="0.000023"/>
 </kw>
 <arg>${abs_path}</arg>
-<status status="FAIL" start="2025-08-24T00:08:30.091947" elapsed="1.033922">Element with locator '//input[@type='file']' not found.</status>
+<status status="FAIL" start="2025-08-24T00:50:13.167033" elapsed="3.688804">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (171, 1013)
+  (Session info: chrome=139.0.7258.128)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff739b678d5+2802741]
+	GetHandleVerifier [0x0x7ff7398ceb70+79568]
+	(No symbol) [0x0x7ff73966c0fa]
+	(No symbol) [0x0x7ff7396caaa9]
+	(No symbol) [0x0x7ff7396c8442]
+	(No symbol) [0x0x7ff7396c5481]
+	(No symbol) [0x0x7ff7396c4371]
+	(No symbol) [0x0x7ff7396b5bb8]
+	(No symbol) [0x0x7ff7396eac8a]
+	(No symbol) [0x0x7ff7396b5466]
+	(No symbol) [0x0x7ff7396eaea0]
+	(No symbol) [0x0x7ff739712e24]
+	(No symbol) [0x0x7ff7396eaa63]
+	(No symbol) [0x0x7ff7396b3c91]
+	(No symbol) [0x0x7ff7396b4a23]
+	GetHandleVerifier [0x0x7ff739b92ced+2979917]
+	GetHandleVerifier [0x0x7ff739b8d0f3+2956371]
+	GetHandleVerifier [0x0x7ff739baacbd+3078173]
+	GetHandleVerifier [0x0x7ff7398e836e+184014]
+	GetHandleVerifier [0x0x7ff7398f024f+216495]
+	GetHandleVerifier [0x0x7ff7398d70c4+113700]
+	GetHandleVerifier [0x0x7ff7398d7279+114137]
+	GetHandleVerifier [0x0x7ff7398bdf78+10968]
+	BaseThreadInitThunk [0x0x7ffbd632e8d7+23]
+	RtlUserThreadStart [0x0x7ffbd7e3c34c+44]
+</status>
 </kw>
 <var name="${file}">TestData_File_3_part1.xlsx</var>
-<status status="FAIL" start="2025-08-24T00:08:30.088890" elapsed="1.037075">Element with locator '//input[@type='file']' not found.</status>
+<status status="FAIL" start="2025-08-24T00:50:13.164574" elapsed="3.691339">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (171, 1013)
+  (Session info: chrome=139.0.7258.128)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff739b678d5+2802741]
+	GetHandleVerifier [0x0x7ff7398ceb70+79568]
+	(No symbol) [0x0x7ff73966c0fa]
+	(No symbol) [0x0x7ff7396caaa9]
+	(No symbol) [0x0x7ff7396c8442]
+	(No symbol) [0x0x7ff7396c5481]
+	(No symbol) [0x0x7ff7396c4371]
+	(No symbol) [0x0x7ff7396b5bb8]
+	(No symbol) [0x0x7ff7396eac8a]
+	(No symbol) [0x0x7ff7396b5466]
+	(No symbol) [0x0x7ff7396eaea0]
+	(No symbol) [0x0x7ff739712e24]
+	(No symbol) [0x0x7ff7396eaa63]
+	(No symbol) [0x0x7ff7396b3c91]
+	(No symbol) [0x0x7ff7396b4a23]
+	GetHandleVerifier [0x0x7ff739b92ced+2979917]
+	GetHandleVerifier [0x0x7ff739b8d0f3+2956371]
+	GetHandleVerifier [0x0x7ff739baacbd+3078173]
+	GetHandleVerifier [0x0x7ff7398e836e+184014]
+	GetHandleVerifier [0x0x7ff7398f024f+216495]
+	GetHandleVerifier [0x0x7ff7398d70c4+113700]
+	GetHandleVerifier [0x0x7ff7398d7279+114137]
+	GetHandleVerifier [0x0x7ff7398bdf78+10968]
+	BaseThreadInitThunk [0x0x7ffbd632e8d7+23]
+	RtlUserThreadStart [0x0x7ffbd7e3c34c+44]
+</status>
 </iter>
 <var>${file}</var>
 <value>@{files}</value>
-<status status="FAIL" start="2025-08-24T00:08:22.983633" elapsed="8.142415">Element with locator '//input[@type='file']' not found.</status>
+<status status="FAIL" start="2025-08-24T00:50:13.164159" elapsed="3.691838">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (171, 1013)
+  (Session info: chrome=139.0.7258.128)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff739b678d5+2802741]
+	GetHandleVerifier [0x0x7ff7398ceb70+79568]
+	(No symbol) [0x0x7ff73966c0fa]
+	(No symbol) [0x0x7ff7396caaa9]
+	(No symbol) [0x0x7ff7396c8442]
+	(No symbol) [0x0x7ff7396c5481]
+	(No symbol) [0x0x7ff7396c4371]
+	(No symbol) [0x0x7ff7396b5bb8]
+	(No symbol) [0x0x7ff7396eac8a]
+	(No symbol) [0x0x7ff7396b5466]
+	(No symbol) [0x0x7ff7396eaea0]
+	(No symbol) [0x0x7ff739712e24]
+	(No symbol) [0x0x7ff7396eaa63]
+	(No symbol) [0x0x7ff7396b3c91]
+	(No symbol) [0x0x7ff7396b4a23]
+	GetHandleVerifier [0x0x7ff739b92ced+2979917]
+	GetHandleVerifier [0x0x7ff739b8d0f3+2956371]
+	GetHandleVerifier [0x0x7ff739baacbd+3078173]
+	GetHandleVerifier [0x0x7ff7398e836e+184014]
+	GetHandleVerifier [0x0x7ff7398f024f+216495]
+	GetHandleVerifier [0x0x7ff7398d70c4+113700]
+	GetHandleVerifier [0x0x7ff7398d7279+114137]
+	GetHandleVerifier [0x0x7ff7398bdf78+10968]
+	BaseThreadInitThunk [0x0x7ffbd632e8d7+23]
+	RtlUserThreadStart [0x0x7ffbd7e3c34c+44]
+</status>
 </for>
-<status status="FAIL" start="2025-08-24T00:08:22.979238" elapsed="8.146965">Element with locator '//input[@type='file']' not found.</status>
+<status status="FAIL" start="2025-08-24T00:50:13.160211" elapsed="3.695905">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (171, 1013)
+  (Session info: chrome=139.0.7258.128)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff739b678d5+2802741]
+	GetHandleVerifier [0x0x7ff7398ceb70+79568]
+	(No symbol) [0x0x7ff73966c0fa]
+	(No symbol) [0x0x7ff7396caaa9]
+	(No symbol) [0x0x7ff7396c8442]
+	(No symbol) [0x0x7ff7396c5481]
+	(No symbol) [0x0x7ff7396c4371]
+	(No symbol) [0x0x7ff7396b5bb8]
+	(No symbol) [0x0x7ff7396eac8a]
+	(No symbol) [0x0x7ff7396b5466]
+	(No symbol) [0x0x7ff7396eaea0]
+	(No symbol) [0x0x7ff739712e24]
+	(No symbol) [0x0x7ff7396eaa63]
+	(No symbol) [0x0x7ff7396b3c91]
+	(No symbol) [0x0x7ff7396b4a23]
+	GetHandleVerifier [0x0x7ff739b92ced+2979917]
+	GetHandleVerifier [0x0x7ff739b8d0f3+2956371]
+	GetHandleVerifier [0x0x7ff739baacbd+3078173]
+	GetHandleVerifier [0x0x7ff7398e836e+184014]
+	GetHandleVerifier [0x0x7ff7398f024f+216495]
+	GetHandleVerifier [0x0x7ff7398d70c4+113700]
+	GetHandleVerifier [0x0x7ff7398d7279+114137]
+	GetHandleVerifier [0x0x7ff7398bdf78+10968]
+	BaseThreadInitThunk [0x0x7ffbd632e8d7+23]
+	RtlUserThreadStart [0x0x7ffbd7e3c34c+44]
+</status>
 </kw>
 <kw name="Submit the request" owner="Reusable_Functions">
-<status status="NOT RUN" start="2025-08-24T00:08:31.126510" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-08-24T00:50:16.856595" elapsed="0.000032"/>
 </kw>
 <kw name="Close the browser" owner="Reusable_Functions">
-<status status="NOT RUN" start="2025-08-24T00:08:31.126718" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-08-24T00:50:16.856987" elapsed="0.000033"/>
 </kw>
 <tag>Demo_2</tag>
-<status status="FAIL" start="2025-08-24T00:08:14.449236" elapsed="16.677724">Element with locator '//input[@type='file']' not found.</status>
+<status status="FAIL" start="2025-08-24T00:50:05.282776" elapsed="11.574664">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (171, 1013)
+  (Session info: chrome=139.0.7258.128)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff739b678d5+2802741]
+	GetHandleVerifier [0x0x7ff7398ceb70+79568]
+	(No symbol) [0x0x7ff73966c0fa]
+	(No symbol) [0x0x7ff7396caaa9]
+	(No symbol) [0x0x7ff7396c8442]
+	(No symbol) [0x0x7ff7396c5481]
+	(No symbol) [0x0x7ff7396c4371]
+	(No symbol) [0x0x7ff7396b5bb8]
+	(No symbol) [0x0x7ff7396eac8a]
+	(No symbol) [0x0x7ff7396b5466]
+	(No symbol) [0x0x7ff7396eaea0]
+	(No symbol) [0x0x7ff739712e24]
+	(No symbol) [0x0x7ff7396eaa63]
+	(No symbol) [0x0x7ff7396b3c91]
+	(No symbol) [0x0x7ff7396b4a23]
+	GetHandleVerifier [0x0x7ff739b92ced+2979917]
+	GetHandleVerifier [0x0x7ff739b8d0f3+2956371]
+	GetHandleVerifier [0x0x7ff739baacbd+3078173]
+	GetHandleVerifier [0x0x7ff7398e836e+184014]
+	GetHandleVerifier [0x0x7ff7398f024f+216495]
+	GetHandleVerifier [0x0x7ff7398d70c4+113700]
+	GetHandleVerifier [0x0x7ff7398d7279+114137]
+	GetHandleVerifier [0x0x7ff7398bdf78+10968]
+	BaseThreadInitThunk [0x0x7ffbd632e8d7+23]
+	RtlUserThreadStart [0x0x7ffbd7e3c34c+44]
+</status>
 </test>
-<status status="FAIL" start="2025-08-24T00:08:13.919515" elapsed="17.208286"/>
+<status status="FAIL" start="2025-08-24T00:50:04.767310" elapsed="12.092488"/>
 </suite>
 <statistics>
 <total>

@@ -28,10 +28,16 @@ ${Actual}    https://www.amazon.in/
 
 
 
+#Launch browser
+#    Log To Console    🛠️🚀 Launching Selenium Session... Let's automate! 🤖✨
+#    Open Browser    ${URL}   ${browser}   options=add_experimental_option("detach", True)   options=add_argument("--proxy-server=http://your-proxy:port")  options=add_argument("user-agent=${USER_AGENT}")
+#    Maximize Browser Window
+
 Launch browser
     Log To Console    🛠️🚀 Launching Selenium Session... Let's automate! 🤖✨
-    Open Browser    ${URL}   ${browser}   options=add_experimental_option("detach", True)   options=add_argument("--proxy-server=http://your-proxy:port")  options=add_argument("user-agent=${USER_AGENT}")
+    Open Browser    ${URL}   ${Headless}  ${browser}
     Maximize Browser Window
+
 
 Headless Chrome Options
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
