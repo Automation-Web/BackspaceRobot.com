@@ -27,7 +27,8 @@ jobs:
 
       - name: Run Robot Framework Tests
         run: |
-          robot -d UploadWorkflow.robot
+           robot --include Demo_2 Test/UploadWorkflow.robot
+#          robot Test/UploadWorkflow.robot
 #          robot --outputdir Test-Reports --include Demo_2 UploadWorkflow.robot
 
       - name: Upload Test Reports
