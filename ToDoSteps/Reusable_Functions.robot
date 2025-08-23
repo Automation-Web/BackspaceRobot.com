@@ -5,6 +5,9 @@ Resource    ../Data/Common_Variables.robot
 Library    OperatingSystem
 Library    Process
 Library    ../ToDoSteps/SplitAndMoveFiles.py
+Library    SplitAndMoveFiles.py
+#Library    Browser
+#Library    Playwright.py
 
 *** Variables ***
 ${RESOURCE_DIR}     E:/MyWork/robotFramework/Test/Resource
@@ -14,6 +17,15 @@ ${USER_AGENT}    Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (K
 ${Actual}    https://www.amazon.in/
 
 *** Keywords ***
+
+#Launch browser
+#    New Browser    chromium    headless=${FALSE}    args=["--start-maximized"]
+#    New Context    no_viewport=${TRUE}    record_video={'dir': 'videos/'}
+#    New Page    https://example.com
+#    Sleep    3s
+#     Run Process    Python   Playwright.py
+#      run_playwright_script
+
 
 
 Launch browser
@@ -55,7 +67,8 @@ Submit the request
     Click Element    //input[@value='Upload']
 
 Run Split Script
-    Run Process    python    ToDoSteps/SplitAndMoveFiles.py
+    Split And Move Files
+    #Run Process    Python    ToDoSteps/SplitAndMoveFiles.py
 
 #Get Excel Files From Resource and upload
 #    @{files}=    List Files In Directory    ${RESOURCE_DIR}    *.xlsx
