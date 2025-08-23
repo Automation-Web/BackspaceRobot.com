@@ -28,9 +28,9 @@ Run Upload Workflow Once
 
       Validate User Is On Home Page
 
-      Get Excel Files From Resource and upload
-
-      Submit the request
+#      Get Excel Files From Resource and upload
+#
+#      Submit the request
 
       Close The Browser
 
