@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-08-23T14:40:06.734973" rpa="false" schemaversion="5">
+<suite id="s1" name="UploadWorkflow" source="E:\MyWork\robotFramework\Test\UploadWorkflow.robot">
+<test id="s1-t1" name="Run Upload Workflow Once" line="23">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary" type="SETUP">
+<arg>0.4</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-08-23T14:40:07.394136" elapsed="0.000296"/>
+</kw>
+<kw name="Launch browser" owner="Reusable_Functions">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🛠️🚀 Launching Selenium Session... Let's automate! 🤖✨</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-23T14:40:07.395195" elapsed="0.000397"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-23T14:40:07.396220" level="INFO">Opening browser 'Chrome' to base url 'https://practice.expandtesting.com/upload'.</msg>
+<arg>${URL}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<arg>options=add_argument("--proxy-server=http://your-proxy:port")</arg>
+<arg>options=add_argument("user-agent=${USER_AGENT}")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-23T14:40:07.395856" elapsed="8.926437"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-23T14:40:16.323146" elapsed="0.446152"/>
+</kw>
+<status status="PASS" start="2025-08-23T14:40:07.394890" elapsed="9.374973"/>
+</kw>
+<kw name="validate user is on home page" owner="Reusable_Functions">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[@aria-label='SUT']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T14:40:16.772603" elapsed="0.926591"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-23T14:40:18.113787" level="INFO">Page title is 'Files Upload page for Automation Testing Practice'.</msg>
+<arg>Files Upload page for Automation Testing Practice</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-08-23T14:40:17.699720" elapsed="0.414216"/>
+</kw>
+<status status="PASS" start="2025-08-23T14:40:16.771305" elapsed="1.342793"/>
+</kw>
+<kw name="Get Excel Files From Resource and upload" owner="Reusable_Functions">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-08-23T14:40:18.116412" level="INFO" html="true">Listing contents of directory '&lt;a href="file://E:\MyWork\robotFramework\Test\Resource"&gt;E:\MyWork\robotFramework\Test\Resource&lt;/a&gt;'.</msg>
+<msg time="2025-08-23T14:40:18.116928" level="INFO">7 files:
+TestData_File_4_part4.xlsx
+TestData_File_5_part1.xlsx
+TestData_File_5_part2.xlsx
+TestData_File_5_part3.xlsx
+TestData_File_5_part4.xlsx
+TestData_File_5_part5.xlsx
+TestData_File_5_part6.xlsx</msg>
+<msg time="2025-08-23T14:40:18.117091" level="INFO">@{files} = [ TestData_File_4_part4.xlsx | TestData_File_5_part1.xlsx | TestData_File_5_part2.xlsx | TestData_File_5_part3.xlsx | TestData_File_5_part4.xlsx | TestData_File_5_part5.xlsx | TestData_File_5_part6.xl...</msg>
+<var>@{files}</var>
+<arg>${RESOURCE_DIR}</arg>
+<arg>*.xlsx</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-08-23T14:40:18.116177" elapsed="0.000952"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-23T14:40:18.117474" level="INFO">['TestData_File_4_part4.xlsx', 'TestData_File_5_part1.xlsx', 'TestData_File_5_part2.xlsx', 'TestData_File_5_part3.xlsx', 'TestData_File_5_part4.xlsx', 'TestData_File_5_part5.xlsx', 'TestData_File_5_part6.xlsx']</msg>
+<arg>${files}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-23T14:40:18.117305" elapsed="0.000230"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Normalize Path" owner="OperatingSystem">
+<msg time="2025-08-23T14:40:18.118252" level="INFO">${file_path} = Resource\TestData_File_4_part4.xlsx</msg>
+<var>${file_path}</var>
+<arg>${RESOURCE_DIR}/${file}</arg>
+<doc>Normalizes the given path.</doc>
+<status status="PASS" start="2025-08-23T14:40:18.118007" elapsed="0.000281"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-23T14:40:18.118641" level="INFO">${abs_path} = E:\MyWork\robotFramework\Test\Resource\TestData_File_4_part4.xlsx</msg>
+<var>${abs_path}</var>
+<arg>E:\\MyWork\\robotFramework\\Test\\${file_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-23T14:40:18.118440" elapsed="0.000234"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-23T14:40:18.118947" level="INFO">Resource\TestData_File_4_part4.xlsx</msg>
+<arg>${file_path}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-23T14:40:18.118806" elapsed="0.000192"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-23T14:40:18.119248" level="INFO">Uploading: E:\MyWork\robotFramework\Test\Resource\TestData_File_4_part4.xlsx</msg>
+<arg>Uploading: ${abs_path}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-23T14:40:18.119122" elapsed="0.000178"/>
+</kw>
+<kw name="Upload Excel File" owner="Reusable_Functions">
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-08-23T14:40:18.120037" level="INFO">Sending E:\MyWork\robotFramework\Test\Resource\TestData_File_4_part4.xlsx to browser.</msg>
+<arg>//input[@type='file']</arg>
+<arg>${file}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-08-23T14:40:18.119795" elapsed="0.898874"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//button[contains(text(),'Upload')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T14:40:19.019544" elapsed="0.846519"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-23T14:40:19.867094" level="INFO">Clicking element '//button[contains(text(),'Upload')]'.</msg>
+<arg>//button[contains(text(),'Upload')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T14:40:19.866554" elapsed="3.826088"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//h1[text()='File Uploaded!']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T14:40:23.693225" elapsed="0.853468"/>
+</kw>
+<kw name="Remove File" owner="OperatingSystem">
+<msg time="2025-08-23T14:40:24.548675" level="INFO" html="true">Removed file '&lt;a href="file://E:\MyWork\robotFramework\Test\Resource\TestData_File_4_part4.xlsx"&gt;E:\MyWork\robotFramework\Test\Resource\TestData_File_4_part4.xlsx&lt;/a&gt;'.</msg>
+<arg>${file}</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="PASS" start="2025-08-23T14:40:24.547254" elapsed="0.001654"/>
+</kw>
+<arg>${abs_path}</arg>
+<status status="PASS" start="2025-08-23T14:40:18.119475" elapsed="6.429667"/>
+</kw>
+<var name="${file}">TestData_File_4_part4.xlsx</var>
+<status status="PASS" start="2025-08-23T14:40:18.117860" elapsed="6.431414"/>
+</iter>
+<iter>
+<kw name="Normalize Path" owner="OperatingSystem">
+<msg time="2025-08-23T14:40:24.550557" level="INFO">${file_path} = Resource\TestData_File_5_part1.xlsx</msg>
+<var>${file_path}</var>
+<arg>${RESOURCE_DIR}/${file}</arg>
+<doc>Normalizes the given path.</doc>
+<status status="PASS" start="2025-08-23T14:40:24.549999" elapsed="0.000637"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-23T14:40:24.551418" level="INFO">${abs_path} = E:\MyWork\robotFramework\Test\Resource\TestData_File_5_part1.xlsx</msg>
+<var>${abs_path}</var>
+<arg>E:\\MyWork\\robotFramework\\Test\\${file_path}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-23T14:40:24.550971" elapsed="0.000524"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-23T14:40:24.553092" level="INFO">Resource\TestData_File_5_part1.xlsx</msg>
+<arg>${file_path}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-23T14:40:24.552118" elapsed="0.001205"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-23T14:40:24.554189" level="INFO">Uploading: E:\MyWork\robotFramework\Test\Resource\TestData_File_5_part1.xlsx</msg>
+<arg>Uploading: ${abs_path}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-23T14:40:24.553739" elapsed="0.000598"/>
+</kw>
+<kw name="Upload Excel File" owner="Reusable_Functions">
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-08-23T14:40:24.557520" level="INFO">Sending E:\MyWork\robotFramework\Test\Resource\TestData_File_5_part1.xlsx to browser.</msg>
+<msg time="2025-08-23T14:40:25.602394" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-23T14:40:25.602855" level="FAIL">Element with locator '//input[@type='file']' not found.</msg>
+<arg>//input[@type='file']</arg>
+<arg>${file}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="FAIL" start="2025-08-23T14:40:24.557002" elapsed="1.054134">Element with locator '//input[@type='file']' not found.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//button[contains(text(),'Upload')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-08-23T14:40:25.611694" elapsed="0.000100"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//button[contains(text(),'Upload')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-23T14:40:25.612120" elapsed="0.000075"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//h1[text()='File Uploaded!']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-08-23T14:40:25.612487" elapsed="0.000074"/>
+</kw>
+<kw name="Remove File" owner="OperatingSystem">
+<arg>${file}</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" start="2025-08-23T14:40:25.612838" elapsed="0.000075"/>
+</kw>
+<arg>${abs_path}</arg>
+<status status="FAIL" start="2025-08-23T14:40:24.554781" elapsed="1.058490">Element with locator '//input[@type='file']' not found.</status>
+</kw>
+<var name="${file}">TestData_File_5_part1.xlsx</var>
+<status status="FAIL" start="2025-08-23T14:40:24.549713" elapsed="1.063818">Element with locator '//input[@type='file']' not found.</status>
+</iter>
+<var>${file}</var>
+<value>@{files}</value>
+<status status="FAIL" start="2025-08-23T14:40:18.117636" elapsed="7.496127">Element with locator '//input[@type='file']' not found.</status>
+</for>
+<status status="FAIL" start="2025-08-23T14:40:18.115827" elapsed="7.498316">Element with locator '//input[@type='file']' not found.</status>
+</kw>
+<kw name="Submit the request" owner="Reusable_Functions">
+<status status="NOT RUN" start="2025-08-23T14:40:25.615103" elapsed="0.000111"/>
+</kw>
+<kw name="Close the browser" owner="Reusable_Functions">
+<status status="NOT RUN" start="2025-08-23T14:40:25.615778" elapsed="0.000092"/>
+</kw>
+<tag>Demo_2</tag>
+<status status="FAIL" start="2025-08-23T14:40:07.392601" elapsed="18.223886">Element with locator '//input[@type='file']' not found.</status>
+</test>
+<status status="FAIL" start="2025-08-23T14:40:06.737280" elapsed="18.881358"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Demo_2</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="UploadWorkflow">UploadWorkflow</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
