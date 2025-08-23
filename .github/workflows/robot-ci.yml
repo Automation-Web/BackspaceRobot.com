@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Robot Framework Tests
         run: |
-          robot -d output Login.robot
+          robot --outputdir Test-Reports --include Demo2 UploadWorkflow.robot
 
       - name: Upload Test Reports
         uses: actions/upload-artifact@v4
